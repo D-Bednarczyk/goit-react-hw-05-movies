@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const api_url = 'https://api.themoviedb.org/3/trending/movie/day';
+//const api_url = 'https://api.themoviedb.org/3/trending/movie/day';
 
-const api_key = `7e9c6de9ef7e99bf1bbba471ce4d3f23`;
+//const api_key = `7e9c6de9ef7e99bf1bbba471ce4d3f23`;
 
 const options = {
   method: 'GET',
