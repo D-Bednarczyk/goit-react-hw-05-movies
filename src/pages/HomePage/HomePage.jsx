@@ -1,15 +1,36 @@
 import { fetchTrending } from 'service/fetchTrending';
+import React, { useEffect, useState } from 'react';
+import MovieListComp from 'components/MovieListComp/MovieListComp';
 
 const HomePage = () => {
-  console.log(fetchTrending);
+  const [films, setFilms] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const trendingMoviesArray = fetchTrending();
-  console.log({trendingMoviesArray.data.result});
+  useEffect(() => {
+    const fetchTrendingFilms = () => {
+      setLoading(true);
+
+      fetchTrending()
+        .then(fetchTrendingFilms => {
+          setFilms(fetchTrendingFilms.data.results);
+        })
+        .catch(error => {
+          console.log(error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    };
+
+    fetchTrendingFilms();
+  }, []);
+
+  console.log(films);
 
   return (
     <div>
       <h2>Trending today</h2>
-      <ul></ul>
+      <MovieListComp films={films} />
     </div>
   );
 };
