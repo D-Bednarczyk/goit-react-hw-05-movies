@@ -9,7 +9,7 @@ const NavMenu = () => {
         Home
       </NavLink>
       <NavLink className={css.anchor} to="/movies">
-        Search
+        Movies
       </NavLink>
     </nav>
   );
