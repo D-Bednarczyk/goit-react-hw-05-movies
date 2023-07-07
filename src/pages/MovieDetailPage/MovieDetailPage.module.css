@@ -3,7 +3,8 @@
   gap: 30px;
   border-bottom-width: 2px;
   border-bottom-color: black;
-  border-bottom-style: dotted;
+  border-bottom-style: solid;
+  padding-bottom: 20px;
 }
 
 .poster {

@@ -6,12 +6,12 @@ import css from './MovieDetailPage.module.css';
 
 const MovieDetailPage = () => {
   const [filmDetail, setFilmDetail] = useState({});
+  const [filmGenres, setfilmGenres] = useState([]);
   const [loading, setLoading] = useState(false);
   const { movieId } = useParams();
   //dorobic loading
-  // console.log('test:', fetchMovie(504949));
 
-  useEffect(() => {
+  /*   useEffect(() => {
     const fetchMovieDetail = () => {
       setLoading(true);
 
@@ -28,11 +28,29 @@ const MovieDetailPage = () => {
     };
 
     fetchMovieDetail();
-  }, []);
+  }, [movieId]); */
 
-  console.log(filmDetail);
-  console.log(filmDetail.genres);
+  useEffect(() => {
+    (async () => {
+      try {
+        setLoading(true);
+        const fdata = await fetchMovie(movieId);
+        setFilmDetail(fdata.data);
+        setfilmGenres(fdata.data.genres);
+      } catch (error) {
+        console.log(error.message);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, [movieId]);
+
+  // console.log(filmDetail);
+  // console.log(filmGenres);
   // <p>{filmDetail.genres.map(el => el.name + ' ')}</p>
+
+  if (loading) return <div>Loading</div>;
+
   return (
     <div className={css.moviesDetails}>
       <div>
@@ -49,10 +67,10 @@ const MovieDetailPage = () => {
         <h4>Overview</h4>
         <p>{filmDetail.overview}</p>
         <h5>Genres</h5>
-        <MovieDetailGenresComp genres={filmDetail.genres} />
+        <MovieDetailGenresComp genres={filmGenres} />
       </div>
     </div>
   );
 };
-
+//
 export default MovieDetailPage;
