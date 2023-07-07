@@ -10,16 +10,16 @@ import MovieDetailReviewPage from 'pages/MovieDetailReviewPage/MovieDetailReview
 export const App = () => {
   return (
     <div>
-      <NavMenu />
-
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/movies" element={<MoviesListPage />}></Route>
-        <Route path="/movies/:movieId" element={<MovieDetailPage />}>
-          <Route path="cast" element={<MovieDetailCastPage />} />
-          <Route path="reviews" element={<MovieDetailReviewPage />} />
+        <Route path="/" element={<NavMenu />}>
+          <Route index element={<HomePage />} />
+          <Route path="/movies" element={<MoviesListPage />} />
+          <Route path="/movies/:movieId" element={<MovieDetailPage />}>
+            <Route path="cast" element={<MovieDetailCastPage />} />
+            <Route path="reviews" element={<MovieDetailReviewPage />} />
+          </Route>
+          <Route path="*" element={<HomePage />} />
         </Route>
-        <Route path="*" element={<HomePage />} />
       </Routes>
     </div>
   );
