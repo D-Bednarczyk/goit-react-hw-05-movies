@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import styled from 'styled-components';
 
 import css from './NavMenuComp.module.css';
 
