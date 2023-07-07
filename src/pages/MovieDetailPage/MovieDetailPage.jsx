@@ -9,26 +9,6 @@ const MovieDetailPage = () => {
   const [filmGenres, setfilmGenres] = useState([]);
   const [loading, setLoading] = useState(false);
   const { movieId } = useParams();
-  //dorobic loading
-
-  /*   useEffect(() => {
-    const fetchMovieDetail = () => {
-      setLoading(true);
-
-      fetchMovie(movieId)
-        .then(fetchMovie => {
-          setFilmDetail(fetchMovie.data);
-        })
-        .catch(error => {
-          console.log(error);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    };
-
-    fetchMovieDetail();
-  }, [movieId]); */
 
   useEffect(() => {
     (async () => {
@@ -44,10 +24,6 @@ const MovieDetailPage = () => {
       }
     })();
   }, [movieId]);
-
-  console.log(filmDetail);
-  // console.log(filmGenres);
-  // <p>{filmDetail.genres.map(el => el.name + ' ')}</p>
 
   if (loading) return <div>Loading</div>;
 

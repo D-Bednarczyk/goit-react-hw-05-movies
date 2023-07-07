@@ -4,7 +4,7 @@ const MovieCrewComp = ({ cast }) => {
   return (
     <ul>
       {cast.map(el => (
-        <li>
+        <li key={cast.id}>
           <img
             className={css.profilepic}
             src={'https://image.tmdb.org/t/p/original' + el.profile_path}
