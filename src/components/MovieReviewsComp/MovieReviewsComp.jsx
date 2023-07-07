@@ -1,7 +1,6 @@
 const MovieReviewsComp = ({ reviews }) => {
-  console.log(reviews);
-  // if (reviews.length() === 0)
-  //   return <p>We don't have any rwviews for this movie</p>;
+  if (reviews.length === 0)
+    return <p>We don't have any reviews for this movie</p>;
 
   return (
     <ul>
