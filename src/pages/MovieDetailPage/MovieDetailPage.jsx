@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLocation } from 'react';
 import { useParams, Link, Outlet } from 'react-router-dom';
 import { fetchMovie } from 'service/fetchMovie';
 import MovieDetailGenresComp from 'components/MovieDetalGenresComp/MovieDetalGenresComp';
@@ -8,7 +8,10 @@ const MovieDetailPage = () => {
   const [filmDetail, setFilmDetail] = useState({});
   const [filmGenres, setfilmGenres] = useState([]);
   const [loading, setLoading] = useState(false);
+  const location = useLocation();
   const { movieId } = useParams();
+
+  const link = location.state?.from ?? '/';
 
   useEffect(() => {
     (async () => {
@@ -31,7 +34,7 @@ const MovieDetailPage = () => {
     <div>
       <div className={css.moviesDetails}>
         <div>
-          <Link to="/">Back</Link>
+          <Link to={link}>Back</Link>
           <img
             className={css.poster}
             alt="poster"

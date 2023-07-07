@@ -5,7 +5,7 @@ import css from './NavMenuComp.module.css';
 const NavMenu = () => {
   return (
     <nav>
-      <NavLink className={css.anchor} to="/">
+      <NavLink className={css.anchor} to="/" end>
         Home
       </NavLink>
       <NavLink className={css.anchor} to="/movies">

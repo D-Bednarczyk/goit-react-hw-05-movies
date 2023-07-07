@@ -11,6 +11,7 @@ export const App = () => {
   return (
     <div>
       <NavMenu />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesListPage />}></Route>
@@ -18,7 +19,6 @@ export const App = () => {
           <Route path="cast" element={<MovieDetailCastPage />} />
           <Route path="reviews" element={<MovieDetailReviewPage />} />
         </Route>
-
         <Route path="*" element={<HomePage />} />
       </Routes>
     </div>
