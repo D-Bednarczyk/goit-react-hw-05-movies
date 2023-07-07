@@ -3,13 +3,11 @@ import { Routes, Route } from 'react-router-dom';
 import NavMenu from './NavMenuComp/NavMenuComp';
 import HomePage from 'pages/HomePage/HomePage';
 import MovieDetailCastPage from 'pages/MovieDetailCastPage/MovieDetailCastPage';
-import MoviesListPage from 'pages/MoviesListPage/MoviesListPage';
+import MoviesListPage from 'pages/MoviesSearchPage/MoviesSearchPage';
 import MovieDetailPage from 'pages/MovieDetailPage/MovieDetailPage';
 import MovieDetailReviewPage from 'pages/MovieDetailReviewPage/MovieDetailReviewPage';
 
 export const App = () => {
-  // console.log(fetchTrending());
-
   return (
     <div>
       <NavMenu />

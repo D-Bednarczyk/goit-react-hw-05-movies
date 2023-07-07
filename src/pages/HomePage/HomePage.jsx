@@ -5,7 +5,7 @@ import MovieListComp from 'components/MovieListComp/MovieListComp';
 const HomePage = () => {
   const [films, setFilms] = useState([]);
   const [loading, setLoading] = useState(false);
-  //dorobic loading
+
   useEffect(() => {
     const fetchTrendingFilms = () => {
       setLoading(true);
@@ -25,8 +25,8 @@ const HomePage = () => {
     fetchTrendingFilms();
   }, []);
 
-  // console.log(films);
   if (loading) return <div>Loading</div>;
+
   return (
     <div>
       <h2>Trending today</h2>

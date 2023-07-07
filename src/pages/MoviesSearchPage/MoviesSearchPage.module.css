@@ -1,0 +1,11 @@
+.inputSearch {
+  width: 250px;
+
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 25px;
+}
+
+.buttonSearch {
+  font-size: 25px;
+}

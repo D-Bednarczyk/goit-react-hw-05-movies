@@ -7,6 +7,7 @@ const MovieCrewComp = ({ cast }) => {
         <li key={cast.id}>
           <img
             className={css.profilepic}
+            alt="pic"
             src={'https://image.tmdb.org/t/p/original' + el.profile_path}
           ></img>
           {el.name} as {el.character}
