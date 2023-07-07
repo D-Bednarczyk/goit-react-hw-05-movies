@@ -26,7 +26,7 @@ const HomePage = () => {
   }, []);
 
   // console.log(films);
-
+  if (loading) return <div>Loading</div>;
   return (
     <div>
       <h2>Trending today</h2>
