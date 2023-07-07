@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import css from './MoviesSearchPage.module.css';
-
+import MovieListComp from 'components/MovieListComp/MovieListComp';
 import { fetchSearch } from 'service/fetchSearch';
 
 const MoviesSearchPage = () => {
@@ -31,7 +31,7 @@ const MoviesSearchPage = () => {
     setSearchQuery(form.elements.search.value);
   };
 
-  console.log(results);
+  //console.log(results);
 
   if (loading) return <div>Loading</div>;
   return (
@@ -40,6 +40,7 @@ const MoviesSearchPage = () => {
         <input name="search" className={css.inputSearch}></input>
         <button className={css.buttonSearch}>Search</button>
       </form>
+      <MovieListComp films={results} />
     </div>
   );
 };
