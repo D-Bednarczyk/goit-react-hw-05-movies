@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchReview } from 'service/fetchReview';
 import MovieReviewsComp from 'components/MovieReviewsComp/MovieReviewsComp';
-import css from './MovieDetailReviewPage.module.css';
 
 const MovieDetailReviewPage = () => {
   const [reviews, setReviews] = useState([]);
