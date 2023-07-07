@@ -1,3 +1,11 @@
+.moviesDetails {
+  display: flex;
+  gap: 30px;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+  border-bottom-style: dotted;
+}
+
 .poster {
   display: block;
   border-radius: 8px;
