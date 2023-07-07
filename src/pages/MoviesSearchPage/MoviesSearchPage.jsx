@@ -6,23 +6,11 @@ import { fetchSearch } from 'service/fetchSearch';
 const MoviesSearchPage = () => {
   //console.log(fetchSearch('batman'));
   const [results, setResults] = useState([]);
-  const [searchQuery, setSearchQuery] = useState();
+  const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const fetchData = async searchQuery => {
-    try {
-      setLoading(true);
-      const fdata = await fetchSearch(searchQuery);
-      setResults(fdata);
-    } catch (error) {
-      console.log(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-  /* 
   useEffect(() => {
-    (async () => {
+    const fetchData = async () => {
       try {
         setLoading(true);
         const fdata = await fetchSearch(searchQuery);
@@ -32,29 +20,26 @@ const MoviesSearchPage = () => {
       } finally {
         setLoading(false);
       }
-    })();
-  }, []); */
-
-  const handleChange = e => {
-    setSearchQuery(e.target.value);
-  };
-
-  //console.log(searchQuery);
+    };
+    if (!searchQuery) return;
+    fetchData();
+  }, [searchQuery]);
 
   const handleSubmit = e => {
     e.preventDefault();
-    fetchData('batman');
-    console.log(results);
+    const form = e.currentTarget;
+    setSearchQuery(form.elements.search.value);
   };
 
-  // console.log(results);
+  console.log(results);
 
+  if (loading) return <div>Loading</div>;
   return (
     <div>
-      <input className={css.inputSearch} onChange={handleChange}></input>
-      <button className={css.buttonSearch} onSubmit={handleSubmit}>
-        Search
-      </button>
+      <form onSubmit={handleSubmit}>
+        <input name="search" className={css.inputSearch}></input>
+        <button className={css.buttonSearch}>Search</button>
+      </form>
     </div>
   );
 };
