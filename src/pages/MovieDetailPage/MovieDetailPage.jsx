@@ -8,11 +8,12 @@ const MovieDetailPage = () => {
   const [filmDetail, setFilmDetail] = useState({});
   const [filmGenres, setfilmGenres] = useState([]);
   const [loading, setLoading] = useState(false);
+
   const location = useLocation();
+  //console.log(location);
+  const link = location.state?.from ?? '/';
 
   const { movieId } = useParams();
-
-  const link = location.state?.from ?? '/';
 
   useEffect(() => {
     (async () => {

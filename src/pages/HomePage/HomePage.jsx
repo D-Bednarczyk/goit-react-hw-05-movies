@@ -1,5 +1,5 @@
 import { fetchTrending } from 'service/fetchTrending';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import MovieListComp from 'components/MovieListComp/MovieListComp';
 
 const HomePage = () => {

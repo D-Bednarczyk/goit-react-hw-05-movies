@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import css from './MoviesSearchPage.module.css';
 import MovieListComp from 'components/MovieListComp/MovieListComp';
 import { fetchSearch } from 'service/fetchSearch';
@@ -6,7 +7,7 @@ import { fetchSearch } from 'service/fetchSearch';
 const MoviesSearchPage = () => {
   //console.log(fetchSearch('batman'));
   const [results, setResults] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useSearchParams();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
