@@ -1,5 +1,5 @@
-import { useState, useEffect, useLocation } from 'react';
-import { useParams, Link, Outlet } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { fetchMovie } from 'service/fetchMovie';
 import MovieDetailGenresComp from 'components/MovieDetalGenresComp/MovieDetalGenresComp';
 import css from './MovieDetailPage.module.css';
@@ -9,6 +9,7 @@ const MovieDetailPage = () => {
   const [filmGenres, setfilmGenres] = useState([]);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
+
   const { movieId } = useParams();
 
   const link = location.state?.from ?? '/';
