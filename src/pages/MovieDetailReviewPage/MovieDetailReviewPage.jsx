@@ -22,8 +22,6 @@ const MovieDetailReviewPage = () => {
     })();
   }, [movieId]);
 
-  console.log(reviews);
-
   if (loading) return <div>Loading</div>;
 
   return <MovieReviewsComp reviews={reviews} />;

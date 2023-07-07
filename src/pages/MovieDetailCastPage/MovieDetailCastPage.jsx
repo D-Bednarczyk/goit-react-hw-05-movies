@@ -8,7 +8,7 @@ const MovieDetailCastPage = () => {
   const [crew, setCrew] = useState([]);
   const [loading, setLoading] = useState(false);
   const { movieId } = useParams();
-  console.log(movieId);
+
   useEffect(() => {
     (async () => {
       try {
@@ -22,8 +22,6 @@ const MovieDetailCastPage = () => {
       }
     })();
   }, [movieId]);
-
-  console.log(crew);
 
   if (loading) return <div>Loading</div>;
 
