@@ -19,7 +19,7 @@ const MovieDetailReviewPage = lazy(() =>
 export const App = () => {
   return (
     <div>
-      <Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<NavMenu />}>
             <Route index element={<HomePage />} />
