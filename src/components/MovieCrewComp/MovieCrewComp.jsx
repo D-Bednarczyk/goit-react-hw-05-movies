@@ -1,4 +1,5 @@
 import css from './MovieCrewComp.module.css';
+import PropTypes from 'prop-types';
 
 const MovieCrewComp = ({ cast }) => {
   return (
@@ -17,3 +18,7 @@ const MovieCrewComp = ({ cast }) => {
   );
 };
 export default MovieCrewComp;
+
+MovieCrewComp.propTypes = {
+  cast: PropTypes.array.isRequired,
+};

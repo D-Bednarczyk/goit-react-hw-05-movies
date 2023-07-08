@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const MovieReviewsComp = ({ reviews }) => {
   if (reviews.length === 0)
     return <p>We don't have any reviews for this movie</p>;
@@ -15,3 +17,5 @@ const MovieReviewsComp = ({ reviews }) => {
 };
 
 export default MovieReviewsComp;
+
+MovieReviewsComp.propTypes = { reviews: PropTypes.array.isRequired };
